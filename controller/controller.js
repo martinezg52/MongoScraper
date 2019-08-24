@@ -98,7 +98,9 @@ router.get("/", function(req, res) {
       }
     });
   });
-  
+
+//creating a clear all end point to clear out json
+
   router.get("/clearAll", function(req, res) {
     Article.remove({}, function(err, doc) {
       if (err) {
@@ -109,7 +111,9 @@ router.get("/", function(req, res) {
     });
     res.redirect("/articles-json");
   });
-  
+
+//Creating read article route to read an article with a specific id
+
   router.get("/readArticle/:id", function(req, res) {
     var articleId = req.params.id;
     var hbsObj = {
@@ -141,6 +145,9 @@ router.get("/", function(req, res) {
         }
       });
   });
+
+//Area for user to put comments in and be displayed from the mongo database
+  
   router.post("/comment/:id", function(req, res) {
     var user = req.body.name;
     var content = req.body.comment;

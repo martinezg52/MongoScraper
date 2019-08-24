@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 //creating schema for Article Collection
 
 var Schema = mongoose.Schema;
-var articleSchema = new Schema({
+var ArticleSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -20,6 +20,6 @@ var articleSchema = new Schema({
     }]
 })
 
-var article = mongoose.model("Article", articleSchema);
+var Article = mongoose.model("Article", ArticleSchema);
 
-module.exports = article;
+module.exports = Article;
